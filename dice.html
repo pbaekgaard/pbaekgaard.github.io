@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<script>
+			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+		</script>
+		<title>Yatzy Webpage</title>
+	</head>
+	<body>
+#	<div>
+		<header>
+			<h1>Multi-Yatzy</h1>
+		</header>
+		<p>This page introduces the Multi-Yatzy game. It describes the game bacgrkound, its rules, and a guide on how to execute it.</p>
+		<div>
+			<h2>Background</h2>
+			<p>Multi-yatzy is an extension of the popular and well-known <a href="https://da.wikipedia.org/wiki/Yatzy">Yatzy dice game</a>. It is normally played with 5 <a href="#diceFig">6-valued fair dice</a>. However, in this extension the game can be configured with any number of dice between 5 and 20.</p>
+			<figure id="diceFig">
+				<img src="src/images/dice.png" style="width: 15%">
+				<figcaption>Figure 1: A typical dice used in Yatzy.</figcaption>
+			</figure>
+			
+		</div>
+		<div>
+			<h2>Rules</h2>
+			<p>The game consists of playing 15 rounds. In each round, the player makes a single roll of the chosen number of dice. Then the computer calculates the score that can be achieved with the given dice roll and round type, and registers the score in a <a href="#scoreboard">scoreboard</a>.</p>
+			<figure id="scoreboard">
+				<figcaption>Figure 2: Multi Yatzy Scoreboard</figcaption>
+				<table cellspacing="15" style="padding-top: 1vw;">
+					<tr>
+						<td>1s</td>
+						<td>6534625542</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>2s</td>
+						<td>1162434514</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>3s</td>
+						<td>2563244662</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>4s</td>
+						<td>3336631654</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>5s</td>
+						<td>2424525144</td>
+						<td>10</td>
+					</tr>
+					<tr>
+						<td>6s</td>
+						<td>2663423152</td>
+						<td>12</td>
+					</tr>
+					<tr>
+						<td>Sum</td>
+						<td>31</td>
+					</tr>
+					<tr>
+						<td>Bonus</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>1 Pair</td>
+						<td>4431256466</td>
+						<td>12</td>
+					</tr>
+					<tr>
+						<td>2 Pairs</td>
+						<td>2554113653</td>
+						<td>16</td>
+					</tr>
+					<tr>
+						<td>Three Identical</td>
+						<td>4266621354</td>
+						<td>18</td>
+					</tr>
+					<tr>
+						<td>Four Identical</td>
+						<td>2511131264</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>Little Straight</td>
+						<td>2333142216</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Big Straight</td>
+						<td>2432261151</td>
+						<td>20</td>
+					</tr>
+					<tr>
+						<td>House</td>
+						<td>1124531332</td>
+						<td>13</td>
+					</tr>
+					<tr>
+						<td>Chance</td>
+						<td>5425354113</td>
+						<td>23</td>
+					</tr>
+					<tr>
+						<td>Yatzy</td>
+						<td>1645513364</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Total Score</td>
+						<td>137</td>
+					</tr>
+				</table>
+			</figure>
+		</div>
+		<div>
+			<h2>Scoring Rules</h2>
+			<div>
+				<p>Single Dice:</p>
+				<p style="text-indent: 20px">The score of the rounds ones, two, threes, fours, fives, sixes are computed as the number of dices times its face value, e.g. if the roll shows 5 four-dice, the score is 5*4.</p>
+			</div>
+			<div>
+				<p>Bonus:</p>
+				<p style="text-indent: 20px">To earn the bonus, at least a score of 30 must be achieved in the single dice rounds combined.</p>
+			</div>
+			<div>
+				<p>One Pair:</p>
+				<p style="text-indent: 20px">The dice roll must show at least two dice with identical face value.</p>
+			</div>
+			<div>
+				<p>And so on</p>
+			</div>
+			<div>
+				<p>Yatzy:</p>
+				<p style="text-indent: 20px">A dice roll is Yatzy if it contains 5 identical dice. A Yatzy gives a score of 50.</p>
+			</div>
+		</div>
+		<div>
+			<h2>Executing the Game</h2>
+			<p>The game is implemeted in node.js and assumes that it is installed. The game can be started from the command line by executing the command</p>
+			<cite style="padding-left: 20px">command> node ./node.js</cite>
+			<p>Then it wil print out the scoreboard in the terminal, and generate a file "scores.html" that can be viewed in your favourite browser.</p>
+		</div>
+	</div>
+	</body>
+	<footer>Authored by Brian Nielsen <a href="mailto:bnielsen@cs.aau.dk">bnielsen@cs.aau.dk</a>. Copyright &copy;: none whatsoever. Responsibility: none whatsoever.</footer>
+</html>
