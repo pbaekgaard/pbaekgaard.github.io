@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+body {
+	font-family: "Montserrat", sans-serif;
+  	width: 100%;
+	background: linear-gradient(135deg,rgba(255,188,0,0.1) 0%,rgba(0,255,235,0.15) 100%),url('../images/background2.webp') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+}
+
+.container{
+	width: 100%;
+	position: absolute;
+	top: 33%;	
+	transform: translateY(-50%);
+	text-align: center;
+	color: #FFF;
+}
+
+#title{
+	font-size: 2vh;
+}
+
+#fof{
+	font-size: 10vw;
+	margin: 0;
+	font-weight: 900;
+	letter-spacing: 20px;
+}
+
+#desc{
+
+}
+
+.button{
+	display: flex;
+	justify-content: center;
+	transform: translateY(20%);
+}
+.back-button{
+	font-size: 100%;
+	text-align: center;
+	background: #00ffcc;
+	padding: 12px 24px;
+	display: inline-block;
+	text-transform: uppercase;
+	transition: 0.4s;
+	border-radius: 25px;
+}
+.back-button:hover{
+	background: #00ffccaa;
+}
+#back-btn{
+	text-decoration: none;
+	background: linear-gradient(135deg,rgba(255,188,0,0.1) 0%,rgba(0,255,235,0.15) 100%),url('../images/background2.webp') no-repeat center center fixed; 
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
