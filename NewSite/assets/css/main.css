@@ -1,3 +1,7 @@
+@media screen and (max-width:320px) {
+
+} 
+@media screen and (min-width:321px) {
 html {
 	font-family: 'Montserrat', sans-serif;
 }
@@ -44,7 +48,7 @@ body {
 }
 
 #info-box h2{
-	font-size: 125%;
+	font-size: 1.6vh;
 	font-weight: 600;
 	line-height: 2;
 	color: #DDD;
@@ -264,4 +268,5 @@ body {
 
 .testtext{
 	display: none;
+}
 }
