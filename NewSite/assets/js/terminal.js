@@ -29,12 +29,45 @@ var skillsText = [
 	},
 	{
 		file: true,
-		string: $('.mySkills').html() + '$ '
+		string: $('.skillsMessage').html() + '$ '
 	},
 ];
 
-async function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+var aboutText = [
+	{
+		file: false,
+		string: ". ~/about.js"
+	},
+	{
+		file: true,
+		string: $('.aboutMessage').html() + '$ '
+	},
+];
+
+var contactText = [
+	{
+		file: false,
+		string: ". ~/contact.js"
+	},
+	{
+		file: true,
+		string: $('.contactMessage').html() + '$ '
+	},
+];
+
+var projectsText = [
+	{
+		file: false,
+		string: ". ~/projects.js"
+	},
+	{
+		file: true,
+		string: $('.projectsMessage').html() + '$ '
+	},
+];
+
+async function sleep(ms){
+	await new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function type(words) {
@@ -42,49 +75,73 @@ async function type(words) {
 	let j = 0;
 	let textDiv = document.querySelector("#text");
 	textDiv.innerHTML = "$ ";
-	for (i = 0; i < words.length; i++) {
-		if(stop === true) {
-			return;
-		}
+	while(stop != true){
+		for (i = 0; stop != true, i < words.length; i++) {
 		text = words[i];
 		console.log(text);
-		if(text.file == true && words[i].string.substring(0,9) != "undefined") {
+		if(text.file == true) {
 			textDiv.innerHTML += text.string;
 		}
-		if(words[i].string.substring(0,9) == "undefined") {
-			textDiv.innerHTML += "<br> CONTENT IS MISSING! (PLEASE CONTACT ME SO I CAN FIX) ";
-		}
 		if(text.file != true) {
-			for(j = 0; j < text.string.length; j++) {
-				if(stop === true) {
-					return
-				}
-				if(j<text.string.length) {
+			for(j = 0; stop != true, j < text.string.length; j++) {
+				if(j<text.string.length && stop != true) {
 					textDiv.innerHTML += text.string.charAt(j);
-					if(stop === true) {
-						return
-					}
 					await sleep(25);
-					if(stop === true) {
-						return
-					}
 				}
 			}
 		}
 		if(stop != true && words[i+1] != undefined && words[i+1].file != true) {
 			textDiv.innerHTML += "<br><br>$ "
-			await new Promise(resolve => setTimeout(resolve, 800));
+			await sleep(800);
+		}
+		else {
+			if (stop == true){
+				return 0;
+			}
 		}
 	}
-}
-async function start() {
-	type(welcomeText);
-	document.getElementById('skills').addEventListener("click", async function(){
 	stop = true;
-	await sleep(600);
-	stop = false;
-	await sleep(10);
-	type(skillsText);
-}, false)
+	}
+	
 }
-start();
+
+
+async function myStart() {
+	type(welcomeText);
+document.getElementById('skills').addEventListener("click", async function(){
+	stop = true;
+	await sleep(800);
+	stop = false;
+	await type(skillsText);
+});
+
+document.getElementById('projects').addEventListener("click", async function(){
+	stop = true;
+	await sleep(800);
+	stop = false;
+	await type(projectsText);
+});
+
+document.getElementById('about').addEventListener("click", async function(){
+	stop = true;
+	await sleep(800);
+	stop = false;
+	await type(aboutText);
+});
+
+document.getElementById('contact').addEventListener("click", async function(){
+	stop = true;
+	await sleep(800);
+	stop = false;
+	await type(contactText);
+});
+}
+
+async function start() {
+	return await myStart();
+}
+
+(async() => {
+  await start();
+})();
+
