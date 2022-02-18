@@ -244,7 +244,6 @@ body {
 	content:"C";
 	color: #fff;
 	opacity: 0;
-	z-index: 3;
 	background: #fff;
   	line-height: 17px;
  	-webkit-animation: blink 0.8s infinite;
