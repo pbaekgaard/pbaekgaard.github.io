@@ -20,6 +20,7 @@
 		<section class="sidebar-container">
 			<div class="sidebar">
 				<a href="/"><img id="logo" alt="logo" src="assets/images/logo.svg"></a>
+				<hr style="margin-top: 1vh;width:75%; color: rgba(255,255,255,0.25)", size="1">
 				<div class="info-box-container">
 					<div id="info-box">
 						<div class="info-titles">
@@ -83,36 +84,64 @@
 		</section>
 	</div>
 </body>
+
 <div class="introduction">
 	<p>Hi! my name is</p>
 	<h1>Peter</h1>
 	<p>And I'm currently a student at Aalborg University, where i study Software Engineering.</p>
 </div>
 <div class="projectsMessage">
-	<h1 class="messageTitle" style="font-style: oblique;">MY PROJECTS</h1>
+	<h1 class="messageTitle">MY PROJECTS</h1>
 	<hr style="width:100%", size="1", color=#DDD>
 	<div class="projectSet">
-		<div class="projectItem left">
-			<div class="projectText">
-			<h1>SMARTFRAPP</h1>
-			<p>
-				SmartFrAPP was the first project i worked on.<br>
-				We made this with my study-group by the end of our 1. semester.<br>
-				SmartFrAPP is a concept application for your mobile phone, to cooperate with a smartfridge.<br>
-				The goal of SmartFrAPP is to reduce food waste.
-			</p>
-				
+		<div class="projectItem textright">
+			<div class="project-image">
+				<div class="img">
+					<img src="assets/images/projects/yatzy.png" alt="Project">
+				</div>
 			</div>
-			<div class="projectImage">
-				<img class="project-img" src="assets/images/projects/smartfrapp.png">
-			</div>
+			<div class="project-txt">
+				<div class="projectText-left">
+					<div class="project-title-left">
+						<h2 class="project-title">multi-yatzy</h2>
+						<h3 class="project-sub-title">
+						Second exam assignment
+						</h3>
+					</div>
 
+					<p class="project-desc">Multi-Yatzy was my second exam assignment during the imperative programming course from my first semester. While i didn't draw this program for the exam, I am still very proud of how it turned out!</p>
+					<p class="project-link">Github: <a href="#">https://github.com/pbaekgaard/Multi-Yatzy</a></p>					
+				</div>
+			</div>
+		</div>
+		<div class="projectItem textleft">
+			<div class="project-image">
+				<div class="img">
+					<img src="assets/images/projects/smartfrapp.png" alt="Project">
+				</div>
+			</div>
+			<div class="project-txt">
+				<div class="projectText-right">
+					<div class="project-title-right">
+						<h2 class="project-title">smartfrapp</h2>
+						<h3 class="project-sub-title">
+						First semester project
+						</h3>
+					</div>
+
+					<p class="project-desc">
+						Smartfrapp is a concept app made purely in C. Smartfrapp was made together with my project group and landed us an <span style="font-weight: bold">A</span>.
+						The goal of the app is to combat food waste, as it is a big problem in todays society.
+
+					</p>
+					<p class="project-link">Github: <a href="#">link here</a></p>					
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-
 <div class="skillsMessage">
-	<h1 class="messageTitle" style="font-style: oblique;">MY SKILLS</h1>
+	<h1 class="messageTitle">MY SKILLS</h1>
 	<hr style="width:100%", size="1", color=#DDD>
 	<div class="skillSet">
 		<div class="skillItem" id="cProgramming">
@@ -152,5 +181,61 @@
 		</div>
 	</div>
 </div>
+<div class="aboutMessage">
+	<div class="aboutContainer">
+		<h1 class="messageTitle">ABOUT ME</h1>
+		<hr style="width:100%", size="1", color=#DDD>
+		<div class="aboutSection">
+			<div class="aboutText">
+				<div class="aboutTitle">
+					<h1 class="atabout">ABOUT</h1>
+				</div>
+				<div class="aboutDescription">
+					<p>
+						My name is <span style="font-weight: bold; font-size: 2em">Peter Bækgaard</span> and I am <span style="font-weight: bold; font-size: 1.5em">23</span> years old. I am currently a <span style="font-weight: bold; font-size: 2em;">student</span> <br/>at <span style="font-weight: bold">Aalborg</span> University in Denmark, where i am studying to become a <span style="font-weight: bold; font-size: 1.9em">Software Engineer.</span><br>I love to code and aspire to create <span style="font-weight: bold; font-size: 1em">meaningful</span> <span style="font-weight: bold; font-size: 2em">beautiful </span>and <span style="display:  flex; flex-direction:  row; align-items:  center; justify-content:  center;font-weight: bold; font-size: 3em; padding: 0; margin-top: 0;" >fun <span style="font-weight: 400; font-size: 1.5vh">projects!</span></span>
+					</p>
+				</div>
+			</div>
+			<div class="aboutImage">
+				<figure class="meImage">
+					<img src="assets/images/about/me.png" alt="ME">
+				</figure>
+				<figcaption class="aboutLinks">
+					<a class="aboutLinkedIn">
+						<i class="fa-brands fa-linkedin" id="social-icon"></i>
+						<p>LINKEDIN</p>
+					</a>
+					<a class="aboutGitHub">
+						<i class="fa-brands fa-github-square" id="social-icon"></i>
+						<p>GITHUB</p>
+					</a>
+				</figcaption>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="contactMessage">
+	<div class="contactContainer">
+		<h1 class="messageTitle">CONTACT ME</h1>
+		<hr style="width:100%", size="1", color=#DDD>
+		<div class="contactSection">
+			<h1 class="contactTitle">Contact Me</h1>
+			<hr style="width:33%", size="1", color=#DDD>
+			<div class="contactInput">
+				<input type="text" class="input" placeholder="Full Name">
+				<input type="text" class="input" placeholder="Email Address">
+				<textarea type="text" class="input inputMessage" placeholder="Your Message"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
     <script src="assets/js/terminal.js"></script>
 </html>

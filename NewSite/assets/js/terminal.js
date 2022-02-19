@@ -57,7 +57,7 @@ var contactText = [
 
 var projectsText = [
 	{
-		file: true,
+		file: false,
 		string: ". ~/projects.js"
 	},
 	{
@@ -108,7 +108,7 @@ async function type(words) {
 
 
 async function myStart() {
-	type(projectsText);
+	type(welcomeText);
 document.getElementById('skills').addEventListener("click", async function(){
 	stop = true;
 	await sleep(800);
@@ -146,3 +146,7 @@ async function start() {
   await start();
 })();
 
+function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height =+ (element.scrollHeight)+"px";
+}

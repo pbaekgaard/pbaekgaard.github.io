@@ -104,7 +104,7 @@ body {
 	list-style: none;
 	display: grid;
 	grid-template-columns: 2fr 2fr;
-	grid-gap: 1px;
+	grid-gap: 3px;
 	height: 25vh;
 	width: 25vh;
 	position: relative;
@@ -143,7 +143,7 @@ body {
     -webkit-transform: scale(1.3);
     transform: scale(1.3);
     z-index: 100;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 12px rgba(0,0,0,0.1);
 }
 
 
@@ -269,6 +269,7 @@ body {
 
 .messageTitle {
 	font-size: 2vh;
+	font-style: oblique;
 }
 
 .skillSet{
@@ -316,36 +317,220 @@ body {
 	font-size: 1.25vh;
 }
 
-.projectItem{
+/* Projects Section Style */
+
+.projectItem {
 	display: flex;
-	justify-content: space-between;
-	align-content:  center;
-	align-items: center
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin:  7vh 7vh 0 0;
 }
-.projectImage {
-	padding: 5vh 12vh 0 0;
+
+.projectItem img {
+	width: 22vw;
 }
-.projectImage img{
-	margin-left: auto;
+
+.projectItem:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.project-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	margin-left: 0;
+}
+
+.project-txt {
+	width: 50%;
+	margin-right: 0;
+}
+
+.projectText-right {
+	margin-right: 5vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.projectText-left {
+	margin-left: 5vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.project-desc {
+	max-width: 15vw;
+}
+
+.project-link a {
+	color: #fff;
+}
+
+.project-link a:hover {
+	color: #bbb;
+}
+
+.project-title-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.project-title-left {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.project-title {
+	text-transform: uppercase;
+}
+
+.projectText-right p {
+	text-align: right;
+}
+
+.projectText-left p {
+	text-align: left
+}
+
+.project-txt h2, .project-txt h3 {
+	margin: 0;
 	padding: 0;
-	object-fit: contain;
-	max-height: 33vh;
 }
 
-.projectText {
-	width: 25vw;
+.project-txt h3 {
+	font-style: italic;
+	font-weight: 200;
+	font-size: 1em;
 }
 
-.projectText .left {
+.aboutContainer {
+	margin-top: 2vh;
+	height: 100%;
+}
+
+
+.aboutTitle {
+	display: block;
+	text-align: center;
+	position: relative;
+	font-size: 5em;
+}
+
+.atabout{
+	margin-top: 0;
+	justify-content: center;
+	display: flex;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	margin-bottom: 5vh;
+}
+.atabout:after{
+	content: 'ME';
+	top: 33%;
+	z-index: 0;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	text-shadow: 0px 0px 10px #242936;
+}
+
+.aboutText {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.aboutDescription {
+	width: 50%;
+	text-align: center;
+}
+
+.aboutImage {
+	display: block;
+	text-align: center;
+	width: 50%;
+}
+
+.aboutImage img {
+	border-radius: 50%;
+	height: 50%;
+	width: 50%;
+}
+
+.aboutSection {
+	margin-top: 7.5vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.aboutLinks {
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.aboutLinks a {
+	font-size: 1vh;
+	margin: 1vh 2vh 0vh 2vh;
+}
+
+
+.contactSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contactSection h1{
+	font-size: 3em;
+	margin: 12.5vh 0 0vh 0;
+}
+
+.input {
+	text-align: center;
+	border: none;
+	background-color: transparent;
+	resize: none;
+	outline: none;
+	color: #DDD;
+	font-size: 1.5em;
+	width: 100%;
+}
+
+.contactInput {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	width: 100%;
+}
+
+.contactInput input {
+	margin: 1vh 0 2vh 0;
+}
+
+.inputMessage {
 	width: 33%;
-	margin: 0 0 0 2vw;
+	height: 20vh;
+	margin-top: 1vh;
 	padding: 0;
+	overflow-wrap: break-word;
 }
 
-.projectItem, .right img{
-	margin-left: 1vw;
-}
-
-.projectItem, .right .projectText{
-	margin: 0 0 0 2vw;
+textarea::placeholder{
+	font-family: Montserrat;
+	font-weight: 500;
 }
