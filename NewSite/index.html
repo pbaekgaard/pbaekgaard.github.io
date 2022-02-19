@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="theme-light">
+<head>
+	<title>Peter Bækgaard - Developer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/fef6137ba2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<section class="sidebar-container">
+			<div class="sidebar">
+				<a href="/"><img id="logo" alt="logo" src="assets/images/logo.svg"></a>
+				<div class="info-box-container">
+					<div id="info-box">
+						<div class="info-titles">
+							<h2>Name:</h2>
+							<h2>Age:</h2>
+							<h2>Location:</h2>
+							<h2>Status:</h2>
+						</div>
+						<div class="info-values">
+							<h2>Peter Bækgaard</h2>
+							<h2>23</h2>
+							<h2>Aalborg, Denmark</h2>
+							<h2>Student</h2>
+						</div>
+					</div>
+				</div>
+				<div class="navigation-container">
+					<ul class="nav-btns">
+						<a href="#" id="skills" class="nav-btn"><li>SKILLS</li></a>
+						<a href="#" id="projects" class="nav-btn" ><li>PROJECTS</li></a>
+						<a href="#" id="about" class="nav-btn" ><li>ABOUT ME</li></a>
+						<a href="#" id="contact" class="nav-btn" ><li>CONTACT</li></a>
+					</ul>
+				</div>
+			</div>
+			<div class="social-links">
+				<a href="https://github.com/pbaekgaard/">
+					<i class="fa-brands fa-github-square" id="social-icon"></i>
+				   	<h2>GITHUB</h2>
+				</a>
+				<a href="https://www.linkedin.com/in/pbaekgaard/">
+					<i class="fa-brands fa-linkedin" id="social-icon"></i>
+				    <h2>LINKEDIN</h2>
+				</a>
+			</div>
+		</section>
+		<section class="content">
+			<div class="window">
+				<div class="titlebar">
+					<div class="buttons">
+						<div class="close"></div>
+						<div class="minimize"></div>
+						<div class="maximize"></div>
+					</div>
+					<!--<div class="switch">
+						<div class="theme-switch"></div>
+					</div>-->
+				</div>	
+				<div class="terminal">
+					<div class="terminal-window">
+						<div class="terminal-content">
+							<section class="term">
+								<span id="text">
+								</span>
+    							<span class="terminal-cursor"></span>
+    						</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+<div class="introduction">
+	<p>Hi! my name is</p>
+	<h1>Peter</h1>
+	<p>And I'm currently a student at Aalborg University, where i study Software Engineering.</p>
+</div>
+<div class="projectsMessage">
+	<h1 class="messageTitle" style="font-style: oblique;">MY PROJECTS</h1>
+	<hr style="width:100%", size="1", color=#DDD>
+	<div class="projectSet">
+		<div class="projectItem left">
+			<div class="projectText">
+			<h1>SMARTFRAPP</h1>
+			<p>
+				SmartFrAPP was the first project i worked on.<br>
+				We made this with my study-group by the end of our 1. semester.<br>
+				SmartFrAPP is a concept application for your mobile phone, to cooperate with a smartfridge.<br>
+				The goal of SmartFrAPP is to reduce food waste.
+			</p>
+				
+			</div>
+			<div class="projectImage">
+				<img class="project-img" src="assets/images/projects/smartfrapp.png">
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="skillsMessage">
+	<h1 class="messageTitle" style="font-style: oblique;">MY SKILLS</h1>
+	<hr style="width:100%", size="1", color=#DDD>
+	<div class="skillSet">
+		<div class="skillItem" id="cProgramming">
+			<img class="skill-img" src="assets/images/skills/c.png">
+			<h1>ANSI C89</h1>
+			<p id="description">Imperative Programming course at university taught me the basics and advanced of computing and ANSI C89 programming.</p>
+			<div id="info-box">
+				<div class="info-titles">
+					<p>Experience:</p>
+					<p>level:</p>
+				</div>
+				<div class="info-values">
+					<p>6 Months:</p>
+					<p>[7/10]:</p>
+				</div>
+			</div>
+
+		</div>
+		<div class="skillItem" id="webDevelopment">
+			<div id="skill-img-container">
+				<img class="skill-img" src="assets/images/skills/webdev.png">
+			</div>
+			<h1>Front/Backend</h1>
+			<p id="description">
+			Started learning HTML, CSS and JS at 12 years old. Currently taking a course on Internet Programming and Web Development at University.
+			</p>
+			<div id="info-box" class="skillsBox">
+				<div class="info-titles">
+					<p>Experience:</p>
+					<p>level:</p>
+				</div>
+				<div class="info-values">
+					<p>6 Months:</p>
+					<p>[7/10]</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <script src="assets/js/terminal.js"></script>
+</html>
