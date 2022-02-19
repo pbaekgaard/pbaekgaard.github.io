@@ -29,7 +29,7 @@ var skillsText = [
 	},
 	{
 		file: true,
-		string: $('.skillsMessage').html() + '$ '
+		string: $('.skillsMessage').html() + 'root@pbaekgaard: '
 	},
 ];
 
@@ -40,7 +40,7 @@ var aboutText = [
 	},
 	{
 		file: true,
-		string: $('.aboutMessage').html() + '$ '
+		string: $('.aboutMessage').html() + 'pbk@portfolio: '
 	},
 ];
 
@@ -51,18 +51,18 @@ var contactText = [
 	},
 	{
 		file: true,
-		string: $('.contactMessage').html() + '$ '
+		string: $('.contactMessage').html() + 'pbk@portfolio: '
 	},
 ];
 
 var projectsText = [
 	{
-		file: false,
+		file: true,
 		string: ". ~/projects.js"
 	},
 	{
 		file: true,
-		string: $('.projectsMessage').html() + '$ '
+		string: $('.projectsMessage').html() + 'pbk@portfolio: '
 	},
 ];
 
@@ -74,12 +74,13 @@ async function type(words) {
 	let i = 0;
 	let j = 0;
 	let textDiv = document.querySelector("#text");
-	textDiv.innerHTML = "$ ";
+	textDiv.innerHTML = "pbk@portfolio: ";
 	while(stop != true){
 		for (i = 0; stop != true, i < words.length; i++) {
 		text = words[i];
 		console.log(text);
 		if(text.file == true) {
+			// await sleep(200);
 			textDiv.innerHTML += text.string;
 		}
 		if(text.file != true) {
@@ -91,7 +92,7 @@ async function type(words) {
 			}
 		}
 		if(stop != true && words[i+1] != undefined && words[i+1].file != true) {
-			textDiv.innerHTML += "<br><br>$ "
+			textDiv.innerHTML += "<br><br>pbk@portfolio: "
 			await sleep(800);
 		}
 		else {
@@ -107,7 +108,7 @@ async function type(words) {
 
 
 async function myStart() {
-	type(welcomeText);
+	type(projectsText);
 document.getElementById('skills').addEventListener("click", async function(){
 	stop = true;
 	await sleep(800);

@@ -315,3 +315,37 @@ body {
 #text>div {
 	font-size: 1.25vh;
 }
+
+.projectItem{
+	display: flex;
+	justify-content: space-between;
+	align-content:  center;
+	align-items: center
+}
+.projectImage {
+	padding: 5vh 12vh 0 0;
+}
+.projectImage img{
+	margin-left: auto;
+	padding: 0;
+	object-fit: contain;
+	max-height: 33vh;
+}
+
+.projectText {
+	width: 25vw;
+}
+
+.projectText .left {
+	width: 33%;
+	margin: 0 0 0 2vw;
+	padding: 0;
+}
+
+.projectItem, .right img{
+	margin-left: 1vw;
+}
+
+.projectItem, .right .projectText{
+	margin: 0 0 0 2vw;
+}
