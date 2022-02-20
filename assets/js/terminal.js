@@ -1,4 +1,24 @@
 let stop = false;
+
+let mobileWelcomeText = [
+	{
+		file: false,
+		string: "cd /bin/terminal/"
+	},
+	{
+		file: false,
+		string: "chmod +x terminal.js"
+	},
+	{
+		file: false,
+		string: "./terminal.js"
+	},
+	{
+		file: true,
+		string: $('.introduction').html() + 'root@pbaekgaard: '
+	},
+];
+
 let welcomeText = [
 	{
 		file: false,
@@ -107,8 +127,14 @@ async function type(words) {
 }
 
 
+const isMobile = window.matchMedia("only screen and (max-width: 1200px)").matches;
 async function myStart() {
-	type(welcomeText);
+	if (isMobile) {
+		type(mobileWelcomeText);
+	}
+	else {
+		type(welcomeText);
+	}
 document.getElementById('skills').addEventListener("click", async function(){
 	stop = true;
 	await sleep(800);
@@ -150,3 +176,5 @@ function auto_grow(element) {
     element.style.height = "5px";
     element.style.height =+ (element.scrollHeight)+"px";
 }
+
+
