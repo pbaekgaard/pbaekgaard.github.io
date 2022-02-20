@@ -35,7 +35,7 @@ var skillsText = [
 
 var aboutText = [
 	{
-		file: false,
+		file: true,
 		string: ". ~/about.js"
 	},
 	{
@@ -108,7 +108,7 @@ async function type(words) {
 
 
 async function myStart() {
-	type(welcomeText);
+	type(aboutText);
 document.getElementById('skills').addEventListener("click", async function(){
 	stop = true;
 	await sleep(800);
