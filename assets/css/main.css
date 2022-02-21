@@ -522,7 +522,7 @@ body {
 }
 
 .social-links{
-	font-size: 0.5vw;
+	font-size: 1vh;
 	position: absolute;
 	width: 100%;
 	bottom: 0;
@@ -579,7 +579,7 @@ body {
 
 .nav-btns a{
 	text-decoration: none;
-	font-size: 1.25em;
+	font-size: 1.5vh;
 	color: #DDD;
 }
 
@@ -754,7 +754,7 @@ body {
 .skillItem #description {
 	margin: 0 calc(50%/2);
 	width: 50%;
-	height: 5vh;
+	min-height: 5vh;
 }
 
 .skill-img {

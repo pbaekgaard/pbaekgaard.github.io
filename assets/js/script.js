@@ -25,6 +25,7 @@ projects.addEventListener("click", async function(){
     overlay.style.width = "100%";
     menuOpen = true;
   } else {
+    menuBtn.classList.remove("open");
     overlay.style.width = "0px";
     menuOpen = false;
   }
@@ -39,6 +40,7 @@ about.addEventListener("click", async function(){
     overlay.style.width = "100%";
     menuOpen = true;
   } else {
+    menuBtn.classList.remove("open");
     overlay.style.width = "0px";
     menuOpen = false;
   }
@@ -53,6 +55,7 @@ skills.addEventListener("click", async function(){
     overlay.style.width = "100%";
     menuOpen = true;
   } else {
+    menuBtn.classList.remove("open");
     overlay.style.width = "0px";
     menuOpen = false;
   }
@@ -67,6 +70,7 @@ contact.addEventListener("click", async function(){
     overlay.style.width = "100%";
     menuOpen = true;
   } else {
+    menuBtn.classList.remove("open");
     overlay.style.width = "0px";
     menuOpen = false;
   }
