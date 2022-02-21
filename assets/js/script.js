@@ -10,9 +10,11 @@ let menuOpen = false;
 
 menuBtn.addEventListener('click', () => {
   if(!menuOpen) {
+    menuBtn.classList.add("open");
     overlay.style.width = "100%";
     menuOpen = true;
   } else {
+    menuBtn.classList.remove("open");
     overlay.style.width = "0px";
     menuOpen = false;
   }
