@@ -1,0 +1,52 @@
+body {
+	height: 100%;
+	width: 100%;
+	background-color: #272E3B;
+	overflow: hidden;
+}
+
+.container {
+	color: #DDD;
+	font-family: Montserrat;
+	font-weight: 400;
+	padding: 4rem;
+	top: 33%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transform: translatex(-50%);
+	transform: translateY(-33%);
+	position: absolute;
+	display: flex;
+	width: 25%;
+	height: 25%;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: #323949;
+	box-shadow: 0px 0px 20px  0px rgba(0,0,0,0.5);
+}
+
+.wrapper {
+	margin-top: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+}
+
+.container h1 {
+	font-style: oblique;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.container h3 {
+	font-weight: 500;
+	margin: 0.2em;
+	padding: 0.2em;
+}
+
+.redirect p{
+	color: #888;
+	margin-top: 5em;
+}
