@@ -579,7 +579,7 @@ body {
 
 .nav-btns a{
 	text-decoration: none;
-	font-size: 1.25vh;
+	font-size: 1.25em;
 	color: #DDD;
 }
 
@@ -985,6 +985,7 @@ body {
 
 .term {
 	margin: 0.5rem;
+	font-size: 1.15em;
 }
 
 .inputMessage {
