@@ -2,9 +2,9 @@
     --color-bg: #282828;
     --color-fg: #EADBB2;
     --color-fg-rgb: 234, 219, 178;
-    --color-link: #8F9191;
+    --color-link-visited: #8F9191;
     --color-link-hover: #668F8B;
-    --color-link-visited: #FA7921;
+    --color-link: #FA7921;
 }
 
 html, body {
