@@ -1,0 +1,98 @@
+@media screen and (min-width:  700px) {
+body {
+	height: 100vh;
+	background-color: #272E3B;
+	overflow: hidden;
+}
+
+.container {
+	color: #DDD;
+	font-family: Montserrat;
+	font-weight: 400;
+	padding: 4rem;
+	display: flex;
+	max-width: 25rem;
+	min-width: 20rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #323949;
+	box-shadow: 0px 0px 20px  0px rgba(0,0,0,0.5);
+}
+
+.wrapper {
+	text-align: center;
+	margin-top: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container h1 {
+	font-style: oblique;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.container h3 {
+	font-weight: 500;
+	margin: 0.2em;
+	padding: 0.2em;
+}
+
+.redirect p{
+	color: #888;
+	margin-top: 5em;
+}
+	
+}
+
+
+
+body {
+	height: 66vh;
+	background-color: #272E3B;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	color: #DDD;
+	font-family: Montserrat;
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper {
+	color: #DDD;
+	font-family: Montserrat;
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container h1 {
+	font-style: oblique;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.container h3 {
+	font-weight: 500;
+	margin: 0.2em;
+	padding: 0.2em;
+}
+
+.redirect p{
+	color: #888;
+	margin-top: 5em;
+}

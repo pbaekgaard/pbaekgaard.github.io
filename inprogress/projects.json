@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Project 1",
+    "description": "Project 1 Description",
+    "githubLink": "/some application",
+    "image": "image"
+  },
+  {
+    "title": "Some other project",
+    "description": "Description 2",
+    "githubLink": "/AAU-Notes",
+    "image": "image"
+  }
+]
