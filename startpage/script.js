@@ -5,6 +5,23 @@ searchBar.addEventListener("keypress", function (e) {
   if (e.key === "Enter") search(searchBar.value);
 });
 
+searchBar.addEventListener("input", resizeInput);
+resizeInput.call(searchBar);
+
+function resizeInput() {
+  var value = $(this).val();
+
+  var div = $("<div id='inputlength'>").text(value).appendTo("body");
+
+  $(this).width(div.width());
+}
+
+function inputFocus() {
+  searchBar.focus();
+}
+
+window.onkeydown = inputFocus;
+
 function Engine(searchTerm, engine) {
   switch (engine) {
     case "google":
@@ -25,7 +42,7 @@ function search(searchTerm) {
 
 $("#web-search").autocomplete({
   delay: 500,
-  minLength: 1,
+  minLength: 3,
   position: { my: "left top-3" },
   source: function (request, response) {
     var proxy = "https://api.allorigins.win/get?url=";
