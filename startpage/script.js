@@ -4,8 +4,57 @@ const searchBar = document.getElementById("web-search");
 const inputContent = document.getElementById("inputcontent");
 const suggestionMenu = document.getElementsByClassName("ui-menu");
 searchBar.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") search(searchBar.value);
+  if (e.key === "Enter") {
+    switch (searchBar.value) {
+      case "s1":
+      case "S1":
+        redirect("https://moodle.aau.dk/");
+        break;
+      case "s2":
+      case "S2":
+        redirect("https://mail.aau.dk/");
+        break;
+      case "s3":
+      case "S3":
+        redirect("https://overleaf.com/");
+        break;
+      case "d1":
+      case "D1":
+        redirect("https://github.com/");
+        break;
+      case "d2":
+      case "D2":
+        redirect("https://vim.rtorr.com/");
+        break;
+      case "d3":
+      case "D3":
+        redirect("https://devdocs.io/");
+        break;
+      case "f1":
+      case "F1":
+        redirect("https://www.youtube.com/watch?v=CfPxlb8-ZQ0");
+        break;
+      case "f2":
+      case "F2":
+        redirect("https://flocus.com/minimalist-pomodoro-timer/");
+        break;
+      case "o1":
+      case "O1":
+        redirect("https://youtube.com/");
+        break;
+      case "o2":
+      case "O2":
+        redirect("https://ida.studynow.dk/");
+        break;
+      default:
+        search(searchBar.value);
+    }
+  }
 });
+
+function redirect(url) {
+  window.location.href = url;
+}
 
 searchBar.addEventListener("input", resizeInput);
 resizeInput.call(searchBar);
