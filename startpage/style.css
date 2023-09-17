@@ -190,17 +190,30 @@
     padding: 0;
     overflow-y: hidden;
   }
+  #inputcontent * {
+    background-color: var(--color-bg);
+    text-decoration: none;
+    padding: 0;
+    border-style: none;
+    font-family: "Fira Code";
+    font-size: 12px;
+    width: 20px;
+    min-width: 0px;
+    max-width: 2000px;
+    color: var(--color-fg);
+    outline: none;
+    margin: 0;
+  }
 
   #inputlength {
     position: absolute;
     visibility: hidden;
     font-size: 22px;
+    font-family: Arial;
   }
-
   #web-search:active,
   #web-search,
   #web-search:focus {
-    display: none;
     background-color: var(--color-bg);
     text-decoration: none;
     padding: 0;
@@ -212,10 +225,13 @@
     color: var(--color-fg);
     outline: none;
     margin: 0;
+    opacity: 0;
   }
+
   .ui-autocomplete {
     background-color: var(--color-bg);
     color: var(--color-link);
+    float: left;
   }
 
   .ui-helper-hidden-accessible {
