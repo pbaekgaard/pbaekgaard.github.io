@@ -1,6 +1,8 @@
 const curEngine = "duckduckgo";
 const searchEngines = ["google", "duckduckgo", "bing", "librex"];
 const searchBar = document.getElementById("web-search");
+const inputContent = document.getElementById("inputcontent");
+const suggestionMenu = document.getElementsByClassName("ui-menu");
 searchBar.addEventListener("keypress", function (e) {
   if (e.key === "Enter") search(searchBar.value);
 });
@@ -9,11 +11,10 @@ searchBar.addEventListener("input", resizeInput);
 resizeInput.call(searchBar);
 
 function resizeInput() {
+  inputFocus();
   var value = $(this).val();
-
-  var div = $("<div id='inputlength'>").text(value).appendTo("body");
-
-  $(this).width(div.width());
+  inputContent.innerText = value;
+  suggestionMenu.width = inputContent.width;
 }
 
 function inputFocus() {
@@ -43,7 +44,10 @@ function search(searchTerm) {
 $("#web-search").autocomplete({
   delay: 500,
   minLength: 3,
-  position: { my: "left top-3" },
+  _resizeMenu: function () {
+    this.menu.element.outerWidth(100000);
+  },
+  position: { my: "left top-3", of: "#inputcontent" },
   source: function (request, response) {
     var proxy = "https://api.allorigins.win/get?url=";
     var suggestURL = "https://duckduckgo.com/ac/?q=%QUERY%";

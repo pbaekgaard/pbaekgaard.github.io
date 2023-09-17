@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>~/startpage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" href="jquery-ui.min.css" />
     <script src="jquery.js"></script>
@@ -10,6 +16,14 @@
   </head>
 
   <body>
+    <input
+      type="text"
+      id="web-search"
+      autofocus
+      name="query"
+      value=""
+      autocomplete="off"
+    />
     <div class="container">
       <div class="left-container">
         <div class="gif">
@@ -19,14 +33,7 @@
       <div class="right-container">
         <div class="head">
           <p>
-            > cd ~/<span
-              ><input
-                type="text"
-                id="web-search"
-                autofocus
-                name="query"
-                value=""
-                autocomplete="off" /></span
+            > cd ~/<span id="inputcontent"></span
             ><span class="blinking">_</span>
           </p>
         </div>

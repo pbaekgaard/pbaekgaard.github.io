@@ -12,7 +12,7 @@
   body {
     background: var(--color-bg);
     color: var(--color-fg);
-    font-family: "Fira Code";
+    font-family: "Jetbrains Mono", monospace;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -23,6 +23,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  #inputcontent * {
+    background-color: var(--color-bg);
+    text-decoration: none;
+    padding: 0;
+    border-style: none;
+    font-family: "Fira Code";
+    font-size: 12px;
+    width: 20px;
+    min-width: 0px;
+    max-width: 2000px;
+    color: var(--color-fg);
+    outline: none;
+    margin: 0;
   }
 
   #inputlength {
@@ -45,18 +60,19 @@
     color: var(--color-fg);
     outline: none;
     margin: 0;
+    opacity: 0;
   }
 
   .ui-autocomplete {
     background-color: var(--color-bg);
     color: var(--color-link);
+    float: left;
   }
 
   .ui-menu {
     padding: 0;
     margin: 0;
     left: 0px;
-    width: 10%;
     border: 1px solid rgb(234, 219, 178);
   }
 
@@ -184,6 +200,7 @@
   #web-search:active,
   #web-search,
   #web-search:focus {
+    display: none;
     background-color: var(--color-bg);
     text-decoration: none;
     padding: 0;
