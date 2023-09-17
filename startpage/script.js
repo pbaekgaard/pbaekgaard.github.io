@@ -17,6 +17,13 @@ function resizeInput() {
   suggestionMenu.width = inputContent.width;
 }
 
+$(searchBar).keydown(function (e) {
+  if (e.ctrlKey && e.key === "c") {
+    searchBar.value = "";
+    inputContent.textContent = "";
+  }
+});
+
 function inputFocus() {
   searchBar.focus();
 }
