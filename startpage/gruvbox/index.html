@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>~/startpage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="jquery-ui.min.css" />
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="left-container">
+        <div class="gif">
+          <img src="cat.gif" />
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="head">
+          <p>
+            > cd ~/<span id="inputcontent"></span
+            ><span class="blinking">_</span>
+          </p>
+        </div>
+        <div class="bookmarks">
+          <div class="category">
+            <div class="links">
+              <li class="title">school</li>
+              <li><a href="https://moodle.aau.dk">moodle</a></li>
+              <li><a href="https://mail.aau.dk">mail</a></li>
+              <li><a href="https://overleaf.com">overleaf</a></li>
+            </div>
+          </div>
+
+          <div class="category">
+            <div class="links">
+              <li class="title">dev</li>
+              <li><a href="https://github.com/">github</a></li>
+              <li><a href="https://vim.rtorr.com/">vim</a></li>
+              <li><a href="https://devdocs.io/">devdocs</a></li>
+            </div>
+          </div>
+
+          <div class="category">
+            <div class="links">
+              <li class="title">
+                focus
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=CfPxlb8-ZQ0">music</a>
+              </li>
+              <li>
+                <a href="https://flocus.com/minimalist-pomodoro-timer/"
+                  >pomodoro</a
+                >
+              </li>
+            </div>
+          </div>
+
+          <div class="category">
+            <div class="links">
+              <li class="title">other</li>
+              <li><a href="https://youtube.com/">youtube</a></li>
+              <li><a href="https://ida.studynow.dk/">studynow</a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <input
+    type="text"
+    id="web-search"
+    autofocus
+    name="query"
+    value=""
+    autocomplete="off"
+  />
+  <script
+    async
+    src="https://cse.google.com/cse.js?cx=c2db4ab772f19424b"
+  ></script>
+  <script src="script.js"></script>
+</html>
