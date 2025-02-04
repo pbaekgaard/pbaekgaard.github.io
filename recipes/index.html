@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+        .category h2 {
+            color: #555;
+        }
+        .recipe-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            list-style: none;
+        }
+        .recipe-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .recipe-item:hover {
+            transform: translateY(-5px);
+        }
+        .recipe-item a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .recipe-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Recipes</h1>
+    <div id="recipeContainer">
+        <!-- Recipe categories and items will be listed here -->
+    </div>
+
+    <script>
+        // Fetch the JSON file with recipe data
+        fetch('recipes.json')
+            .then(response => response.json())
+            .then(data => {
+                const recipeContainer = document.getElementById('recipeContainer');
+
+                // Loop through each category
+                for (const [category, recipes] of Object.entries(data.categories)) {
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'category';
+
+                    const categoryTitle = document.createElement('h2');
+                    categoryTitle.textContent = category;
+                    categoryDiv.appendChild(categoryTitle);
+
+                    const recipeList = document.createElement('ul');
+                    recipeList.className = 'recipe-list';
+
+                    // Loop through recipes in each category
+                    recipes.forEach(recipe => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'recipe-item';
+
+                        const link = document.createElement('a');
+                        link.href = `${category}/${recipe}`;
+                        link.target = '_blank';
+                        link.textContent = recipe.replace('.pdf', '').replace(/_/g, ' ').toUpperCase();
+
+                        listItem.appendChild(link);
+                        recipeList.appendChild(listItem);
+                    });
+
+                    categoryDiv.appendChild(recipeList);
+                    recipeContainer.appendChild(categoryDiv);
+                }
+            })
+            .catch(error => console.error('Error loading recipes:', error));
+    </script>
+</body>
+</html>
