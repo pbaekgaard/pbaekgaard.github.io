@@ -50,12 +50,59 @@
         .recipe-item a:hover {
             text-decoration: underline;
         }
+        .pdf-viewer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            flex-direction: column;
+        }
+        .pdf-header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pdf-header button {
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .pdf-header button:hover {
+            background-color: #0056b3;
+        }
+        .pdf-content {
+            flex-grow: 1;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
     <h1>My Recipes</h1>
     <div id="recipeContainer">
         <!-- Recipe categories and items will be listed here -->
+    </div>
+
+    <div class="pdf-viewer" id="pdfViewer">
+        <div class="pdf-header">
+            <span id="pdfTitle"></span>
+            <button onclick="closePDF()">Back to Recipes</button>
+        </div>
+        <div class="pdf-content">
+            <iframe id="pdfFrame"></iframe>
+        </div>
     </div>
 
     <script>
@@ -83,9 +130,9 @@
                         listItem.className = 'recipe-item';
 
                         const link = document.createElement('a');
-                        link.href = `${category}/${recipe}`;
-                        link.target = '_blank';
+                        link.href = "#";
                         link.textContent = recipe.replace('.pdf', '').replace(/_/g, ' ').toUpperCase();
+                        link.addEventListener('click', () => openPDF(`${category}/${recipe}`, recipe));
 
                         listItem.appendChild(link);
                         recipeList.appendChild(listItem);
@@ -96,6 +143,17 @@
                 }
             })
             .catch(error => console.error('Error loading recipes:', error));
+
+        function openPDF(filePath, title) {
+            document.getElementById('pdfFrame').src = filePath;
+            document.getElementById('pdfTitle').textContent = title.replace('.pdf', '').replace(/_/g, ' ').toUpperCase();
+            document.getElementById('pdfViewer').style.display = 'flex';
+        }
+
+        function closePDF() {
+            document.getElementById('pdfViewer').style.display = 'none';
+            document.getElementById('pdfFrame').src = '';
+        }
     </script>
 </body>
 </html>
