@@ -15,7 +15,7 @@ jobs:
 
       - name: Update recipes_index.md
         run: |
-          echo "# My Recipes" > recipes/recipes_index.md
+          echo "# My Recipes" > recipes/README.md
           for dir in recipes/*/ ; do
             [ -d "$dir" ] || continue
             category=$(basename "$dir")
