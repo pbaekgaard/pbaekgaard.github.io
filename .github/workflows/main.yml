@@ -1,0 +1,36 @@
+name: Update Recipe Index
+
+on:
+  push:
+    paths:
+      - 'recipes/**/*.pdf'
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update recipes_index.md
+        run: |
+          echo "# My Recipes" > recipes/recipes_index.md
+          for dir in recipes/*/ ; do
+            [ -d "$dir" ] || continue
+            category=$(basename "$dir")
+            echo -e "\n## ${category//_/ }" >> recipes/recipes_index.md
+            for pdf in "$dir"*.pdf; do
+              [ -f "$pdf" ] || continue
+              filename=$(basename "$pdf" .pdf)
+              echo "- [${filename//_/ }]($category/$filename.pdf)" >> recipes/recipes_index.md
+            done
+          done
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add recipes/recipes_index.md
+          git commit -m 'Auto-update recipe index'
+          git push
