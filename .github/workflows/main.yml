@@ -1,18 +1,14 @@
 name: Update Recipes JSON
-
 on:
   push:
     paths:
       - 'recipes/**/*.pdf'
-
 jobs:
   update-json:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
       - name: Update recipes.json
         run: |
           recipes_file="recipes/recipes.json"
@@ -23,8 +19,18 @@ jobs:
           fi
           
           jq '.' $recipes_file > tmp.json
-
-          # Loop through recipe folders and PDFs
+          
+          # First, clear any non-existent PDFs from the JSON
+          for category in $(jq -r '.categories | keys[]' tmp.json); do
+            dir="recipes/$category/"
+            # Get list of PDFs that actually exist in the directory
+            existing_pdfs=$(find "$dir" -maxdepth 1 -name "*.pdf" -exec basename {} \; | jq -R -s 'split("\n")[:-1]')
+            # Update category with only existing PDFs
+            jq --arg cat "$category" --argjson pdfs "$existing_pdfs" \
+               '.categories[$cat] = ($pdfs | map(select(length > 0)))' tmp.json > tmp2.json && mv tmp2.json tmp.json
+          done
+          
+          # Then add any new PDFs
           for dir in recipes/*/; do
             [ -d "$dir" ] || continue
             category=$(basename "$dir")
@@ -45,7 +51,6 @@ jobs:
           done
           
           mv tmp.json $recipes_file
-
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions[bot]'
