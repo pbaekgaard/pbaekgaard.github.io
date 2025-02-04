@@ -1,4 +1,4 @@
-name: Update Recipe Index
+name: Update Recipes JSON
 
 on:
   push:
@@ -6,31 +6,50 @@ on:
       - 'recipes/**/*.pdf'
 
 jobs:
-  update-index:
+  update-json:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Update recipes_index.md
+      - name: Update recipes.json
         run: |
-          echo "# My Recipes" > recipes/README.md
-          for dir in recipes/*/ ; do
+          recipes_file="recipes/recipes.json"
+          
+          # Create JSON structure if it doesn't exist
+          if [ ! -f "$recipes_file" ]; then
+            echo '{"categories": {}}' > $recipes_file
+          fi
+          
+          jq '.' $recipes_file > tmp.json
+
+          # Loop through recipe folders and PDFs
+          for dir in recipes/*/; do
             [ -d "$dir" ] || continue
             category=$(basename "$dir")
-            echo -e "\n## ${category//_/ }" >> recipes/recipes_index.md
+            
+            # Ensure category exists in JSON
+            jq --arg cat "$category" \
+               'if .categories[$cat] then . else .categories[$cat] = [] end' tmp.json > tmp2.json && mv tmp2.json tmp.json
+            
+            # Loop through PDFs
             for pdf in "$dir"*.pdf; do
               [ -f "$pdf" ] || continue
-              filename=$(basename "$pdf" .pdf)
-              echo "- [${filename//_/ }]($category/$filename.pdf)" >> recipes/recipes_index.md
+              filename=$(basename "$pdf")
+              
+              # Add recipe if not already listed
+              jq --arg cat "$category" --arg file "$filename" \
+                 'if (.categories[$cat] | index($file)) == null then .categories[$cat] += [$file] else . end' tmp.json > tmp2.json && mv tmp2.json tmp.json
             done
           done
+          
+          mv tmp.json $recipes_file
 
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add recipes/recipes_index.md
-          git commit -m 'Auto-update recipe index'
+          git add recipes/recipes.json
+          git commit -m 'Auto-update recipes.json'
           git push
