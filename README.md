@@ -18,12 +18,41 @@ Or serve with a local server:
 npx serve .
 ```
 
+Or use Wrangler dev server:
+```bash
+npm run dev
+```
+
 ## Deployment
 
-This site is automatically deployed via GitHub Pages when changes are pushed to the main branch.
+This site is deployed to Cloudflare Pages using Wrangler.
+
+### Prerequisites
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Authenticate with Cloudflare:
+```bash
+npx wrangler login
+```
+
+### Deploy
+
+```bash
+npm run deploy
+```
+
+Or directly with wrangler:
+```bash
+npx wrangler pages deploy .
+```
 
 ## Tech Stack
 
 - HTML5
 - CSS3 (Animations, Gradients, Modern effects)
 - No frameworks - pure vanilla everything
+- Cloudflare Pages for hosting
